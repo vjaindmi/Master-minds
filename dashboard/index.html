@@ -1,0 +1,168 @@
+<html lang="en" class="perfect-scrollbar-on"><head>
+    <meta charset="utf-8">
+    <link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
+    <link rel="icon" type="image/png" href="../assets/img/favicon.png">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>FETECTION</title>
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="viewport" content="width=device-width">
+    <!-- Bootstrap core CSS     -->
+    <link href="../assets/css/bootstrap.min.css" rel="stylesheet">
+    <!--  Material Dashboard CSS    -->
+    <link href="../assets/css/material-dashboard.css?v=1.2.0" rel="stylesheet">
+    <!--  CSS for Demo Purpose, don't include it in your project     -->
+    <link href="../assets/css/demo.css" rel="stylesheet">
+    <!--     Fonts and icons     -->
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:400,700,300|Material+Icons" rel="stylesheet" type="text/css">
+    <style type="text/css">
+        .main-panel>.content{
+            margin-top: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        
+        <div style="width:100%" class="main-panel ps-container ps-theme-default ps-active-y" data-ps-id="a83d7fdb-059d-36c2-10fd-7c517d90e836">
+           
+            <div class="content">
+                <div class="container-fluid">
+                  <div class="row">
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header" data-background-color="orange">
+                                    <i class="material-icons">content_copy</i>
+                                </div>
+                                <div class="card-content">
+                                    <p class="category">TOTAL EMPLOYEES
+                                    <h3 class="title total">0
+                                       
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header" data-background-color="green">
+                                    <i class="material-icons">store</i>
+                                </div>
+                                <div class="card-content">
+                                    <p class="category">TOTAL IN EMPLOYEE</p>
+                                    <h3 class="title totalIn" >0</h3>
+                                </div>
+                             
+                            </div>
+                        </div>
+                        <div class="col-lg-4 col-md-6 col-sm-6">
+                            <div class="card card-stats">
+                                <div class="card-header" data-background-color="red">
+                                    <i class="material-icons">info_outline</i>
+                                </div>
+                                <div class="card-content">
+                                    <p class="category">TOTAL OUT EMPLOYEE</p>
+                                    <h3 class="title totalOut">0</h3>
+                                </div>
+                               
+                            </div>
+                        </div>
+                        
+                    </div>
+                   
+                        
+                        
+                    </div>
+                    <div class="row">
+                        
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card">
+                                <div class="card-header" data-background-color="orange">
+                                    <h4 class="title">Employees IN/OUT stats</h4>
+                                    <p class="category">
+                                    Employees on 23 Feb, 2018</p>
+                                </div>
+                                <div class="card-content table-responsive">
+                                    <table class="table table-hover">
+                                        <thead class="text-warning">
+                                            <tr><th>EMPLOYEE ID</th>
+                                            <th>NAME</th>
+                                            <th>IN TIME</th>
+                                            <th>STATUS</th>
+                                        </tr></thead>
+                                        <tbody class="dataTr">
+                                           
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <footer class="footer">
+                <div class="container-fluid">
+                    
+                    
+                </div>
+            </footer>
+        <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 281px; right: 0px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 112px;"></div></div></div>
+    </div>
+
+<!--   Core JS Files   -->
+<script src="../assets/js/jquery-3.2.1.min.js" type="text/javascript"></script>
+<script src="../assets/js/bootstrap.min.js" type="text/javascript"></script>
+<script src="../assets/js/material.min.js" type="text/javascript"></script>
+<!--  Charts Plugin -->
+<script src="../assets/js/chartist.min.js"></script>
+<!--  Dynamic Elements plugin -->
+<script src="../assets/js/arrive.min.js"></script>
+<!--  PerfectScrollbar Library -->
+<script src="../assets/js/perfect-scrollbar.jquery.min.js"></script>
+<!--  Notifications Plugin    -->
+<script src="../assets/js/bootstrap-notify.js"></script>
+<!--  Google Maps Plugin    -->
+
+<!-- Material Dashboard javascript methods -->
+<script src="../assets/js/material-dashboard.js?v=1.2.0"></script>
+<!-- Material Dashboard DEMO methods, don't include it in your project! -->
+<script src="../assets/js/demo.js"></script>
+<script type="text/javascript">
+    $(document).ready(function() {
+        loadData();
+        window.setInterval(function(){
+            loadData();
+        },6000)
+
+        function loadData(){
+          
+            $.get( "http://14.140.104.62/faceAuth/GetEmployeeAttendanceReport", function( data ) {
+                $('.total').html(data.TotalCount);
+                $('.totalIn').html(data.InTime);
+                $('.totalOut').html(data.OutTime);
+
+
+                  $('.dataTr').html('');
+            
+            var tr;
+            for(var i=0;i<data.details.length;i++ ){
+            tr += '<tr>' ;
+            // create a new textInputBox  
+            // create a new Label Text
+            tr += '<td>' + data.details[i].EmployeeId  + '</td>';
+            tr += '<td>' + data.details[i].FirstName.toUpperCase() +' '+data.details[i].LastName.toUpperCase() + '</td>';
+            tr += '<td>' + data.details[i].Time.toUpperCase()  + '</td>';
+            tr += '<td>'  +  (data.details[i].CheckInType == "0" ? "OUT":"IN") +'</td>';
+            tr +='</tr>';
+            }
+            $('.dataTr').append(tr);
+            });
+        }
+
+        //loadData()
+
+       
+        
+    });
+</script>
+
+</body></html>
