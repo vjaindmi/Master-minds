@@ -1,25 +1,76 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-    x:Class="FaceMeApp.Views.SubmitAttendancePage">
-     <StackLayout VerticalOptions="CenterAndExpand">
-        <Image x:Name="imgUser" HorizontalOptions="CenterAndExpand"
-        HeightRequest="200"
-        WidthRequest="200"
-        Source="userPlaceholder.jpg">
-         <Image.GestureRecognizers>
+    x:Class="FaceMeApp.Views.SubmitAttendancePage"
+     xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+    BackgroundColor="#16AA88">
+
+    <ScrollView>
+    <StackLayout VerticalOptions="FillAndExpand" >
+        <Grid>
+            
+         <controls:CircleImage 
+                    Source="userPlaceholder.jpg" 
+                    Aspect="AspectFill"
+                    HeightRequest="200"
+                    WidthRequest="200"
+                    x:Name="imgUser"
+                    HorizontalOptions="Center"
+            Grid.Row="0"
+             BorderColor="#38B99C"
+                BorderThickness="10"
+                    Margin="0,20,0,0">
+                 <controls:CircleImage.GestureRecognizers>
         <TapGestureRecognizer
                 Tapped="Camera_Clicked"
                 NumberOfTapsRequired="1" />
-  </Image.GestureRecognizers>
-        </Image>
-    <Button Image="photo-camera" HorizontalOptions="Center"
-       
-        IsVisible="false"/>
-        <Button Text="Verify Face" BackgroundColor="Silver"
+  </controls:CircleImage.GestureRecognizers>
+        </controls:CircleImage>
+           <Image Source="camera"
+                 HorizontalOptions="Center"
+                VerticalOptions="End"
+                    Margin="125,0,0,30"
+                Aspect="AspectFit"/>
+           
+           
+
+        </Grid>
+        <Label Text="Employee Name"
+        FontSize="Large"
+        HorizontalTextAlignment="Center"
+        TextColor="White"
+        FontAttributes="Bold"
+            x:Name="lblEmpName"/>
+        <Label Text="Designation"
+        FontSize="Medium"
+        HorizontalTextAlignment="Center"
+        TextColor="White"
+        FontAttributes="Bold"
+            x:Name="lblDesignation"/>
+      <Button Text="Check In" 
         HorizontalOptions="Center"
-        WidthRequest="100"
+        WidthRequest="200"
         Clicked="Submit_Clicked"
-        x:Name="btnSubmit"/>
+        x:Name="btnSubmit"
+        BorderRadius="25"
+             TextColor="White"
+        BackgroundColor="#F3536D"
+         FontAttributes="Bold"
+        Margin="0,20,0,0"/>
+            <StackLayout BackgroundColor="#424242" HeightRequest="200"
+                VerticalOptions="EndAndExpand"
+                Padding="30,30,30,30">
+                <Label
+                     Text="Welcome to faceme, Please upload your selfie in order 
+                    to login into the office and record manage your punch in punch out
+via hasle free face recognition biometric system"
+        FontSize="22"
+        HorizontalTextAlignment="Start"
+        TextColor="White"
+        FontAttributes="Bold"
+                />
+            </StackLayout>
     </StackLayout>
+        </ScrollView>
+
 </ContentPage>

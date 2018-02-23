@@ -39,15 +39,15 @@
         FontSize="Large"
         HorizontalTextAlignment="Center"
         TextColor="White"
-        FontAttributes="Bold"/>
+        FontAttributes="Bold"
+            x:Name="lblEmpName"/>
         <Label Text="Designation"
         FontSize="Medium"
         HorizontalTextAlignment="Center"
         TextColor="White"
-        FontAttributes="Bold"/>
-       <Button Image="photoCamera" HorizontalOptions="Center"
-       IsVisible="false"/>
-        <Button Text="Register" 
+        FontAttributes="Bold"
+            x:Name="lblDesignation"/>
+      <Button Text="Register" 
         HorizontalOptions="Center"
         WidthRequest="200"
         Clicked="Submit_Clicked"

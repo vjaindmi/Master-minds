@@ -4,8 +4,6 @@
 <dict>
 	<key>CFBundleDisplayName</key>
 	<string>FaceMeApp</string>
-	<key>CFBundleName</key>
-	<string>FaceMeApp</string>
 	<key>CFBundleIdentifier</key>
 	<string>com.medicomip.ida0082.demonstrator</string>
 	<key>CFBundleShortVersionString</key>
@@ -42,5 +40,14 @@
 	</array>
 	<key>XSAppIconAssets</key>
 	<string>Assets.xcassets/AppIcon.appiconset</string>
+	<key>Custom Property</key>
+	<string></string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<string></string>
+	</dict>
+	<key>CFBundleName</key>
+	<string>Fetection</string>
 </dict>
 </plist>

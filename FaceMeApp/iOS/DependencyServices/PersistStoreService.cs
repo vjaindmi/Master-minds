@@ -127,5 +127,20 @@ namespace FaceMeApp.iOS.DependencyServices
                 return false;
             }
         }
+
+        bool IPersistStoreService.ConnectWpa(string ssid, string password)
+        {
+            throw new NotImplementedException();
+        }
+
+        public byte[] GetBytes()
+        {
+            var documentsDirectory = Environment.GetFolderPath
+                         (Environment.SpecialFolder.Personal);
+            string jpgFilename = System.IO.Path.Combine(documentsDirectory, "icon.png");
+            byte[] img = File.ReadAllBytes(jpgFilename);
+            return img;
+        }
+       
     }
 }

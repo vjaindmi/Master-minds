@@ -39,6 +39,8 @@ namespace FaceMeApp.ViewModel
         {
             _navigation = navigation;
             LoginCommand = new Command(LoginProcess);
+            MobileNumber = "OnePlus5";
+            Password = "Rajat@2012";
         }
 
         /// <summary>
@@ -51,11 +53,18 @@ namespace FaceMeApp.ViewModel
                 CommonHelper.ShowLoader();
                 if (IsValid())
                 {
-                    var result = DependencyService.Get<IPersistStoreService>().ConnectWpa(MobileNumber, Password);
-                    if (result.Result)
-                        App.Current.MainPage = new NavigationPage(new Views.LandingPage());
-                    else
-                        Device.BeginInvokeOnMainThread(() => CommonHelper.ShowAlert("Failed to connect, Try again later!"));
+                    var macAddress = DependencyService.Get<IPersistStoreService>().ConnectWpa(MobileNumber, Password);
+                    //if (!string.IsNullOrEmpty(macAddress))
+                    //{
+                        var imagePath = DependencyService.Get<IPersistStoreService>().getUserData();
+
+                        //if(!string.IsNullOrEmpty(imagePath))
+                        //    App.Current.MainPage = new NavigationPage(new Views.SubmitAttendancePage(macAddress));
+                        //else
+                            App.Current.MainPage = new NavigationPage(new Views.EmplyeeRegisterPage(macAddress));
+                    //}
+                    //else
+                        //Device.BeginInvokeOnMainThread(() => CommonHelper.ShowAlert("Failed to connect, Try again later!"));
 
                 }
                 else

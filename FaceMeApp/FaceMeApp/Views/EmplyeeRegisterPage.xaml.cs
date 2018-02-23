@@ -8,10 +8,11 @@ namespace FaceMeApp.Views
     public partial class EmplyeeRegisterPage : ContentPage
     {
         EmployeeRegistrationViewModel _viewModel = null;
-        public EmplyeeRegisterPage()
+        public EmplyeeRegisterPage(string macAddress)
         {
             InitializeComponent();
-            BindingContext = _viewModel = new EmployeeRegistrationViewModel(this.Navigation);
+            NavigationPage.SetHasNavigationBar(this,false);
+            BindingContext = _viewModel = new EmployeeRegistrationViewModel(this.Navigation, macAddress);
         }
     }
 }

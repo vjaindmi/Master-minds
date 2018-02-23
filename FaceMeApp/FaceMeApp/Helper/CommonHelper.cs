@@ -1,4 +1,5 @@
 ﻿using System;
+using Acr.UserDialogs;
 
 namespace FaceMeApp.Helper
 {
@@ -6,17 +7,17 @@ namespace FaceMeApp.Helper
     {
         public static void ShowLoader()
         {
-            Acr.UserDialogs.UserDialogs.Instance.ShowLoading("Please wait...");
+            UserDialogs.Instance.ShowLoading("Please wait...");
         }
 
         public static void DismissLoader()
         {
-            Acr.UserDialogs.UserDialogs.Instance.HideLoading();
+            UserDialogs.Instance.HideLoading();
         }
 
         public static void ShowAlert(string msg)
         {
-            Acr.UserDialogs.UserDialogs.Instance.ShowError(msg);
+            UserDialogs.Instance.ShowError(msg);
         }
     }
 }
