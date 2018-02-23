@@ -3,13 +3,13 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="FaceMeApp.Views.LoginPage"
     xmlns:Controls="clr-namespace:FaceMeApp.CustomRenderer"
-    BackgroundColor="#2F2130">
+    BackgroundImage="background">
 	<ContentPage.Content>
          <Grid Margin="16,25,16,25">
                
-                <Image Grid.Row="0" Source="logo.jpg" HeightRequest="100"/>
+                <Image Grid.Row="0" Source="logo" HeightRequest="100"/>
                 <Frame BackgroundColor="Transparent" Grid.Row="1" HasShadow="false" Margin="0,35,0,0">
-                    <StackLayout Spacing="25">
+                    <StackLayout Spacing="35">
                     <StackLayout Spacing="0">
                        
                                 <Controls:ExtendedEntry x:Name="txtMobileNumber" 

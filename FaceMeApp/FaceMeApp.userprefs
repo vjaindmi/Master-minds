@@ -1,27 +1,36 @@
 ﻿<Properties StartupConfiguration="{CC1803BF-0446-4634-B1DC-4E7BE6A50C5B}|Default">
-  <MonoDevelop.Ide.ItemProperties.FaceMeApp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.6B47ED2E-DAE2-4A7B-9E81-B0A5ACE15ED3">
+  <MonoDevelop.Ide.ItemProperties.FaceMeApp.iOS PreferredExecutionTarget="MonoDevelop.IPhone.IPhoneSimulatorTarget.F70D5C5D-537F-4B2E-A7A1-F88960F3C53F" automaticSigning="False">
     <MonoDevelop.MacDev.AppleDevelopmentTeam />
   </MonoDevelop.Ide.ItemProperties.FaceMeApp.iOS>
-  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/MainActivity.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="FaceMeApp/ViewModel/LoginViewModel.cs">
     <Files>
-      <File FileName="FaceMeApp/ServiceLayer/HttpHelper.cs" Line="3" Column="31" />
-      <File FileName="FaceMeApp/ServiceLayer/DataService.cs" Line="133" Column="12" />
-      <File FileName="FaceMeApp/Views/LandingPage.xaml.cs" Line="86" Column="14" />
-      <File FileName="FaceMeApp/Views/LoginPage.xaml" Line="6" Column="5" />
-      <File FileName="FaceMeApp/ViewModel/LoginViewModel.cs" Line="89" Column="10" />
-      <File FileName="FaceMeApp/Views/EmplyeeRegisterPage.xaml" Line="37" Column="20" />
-      <File FileName="FaceMeApp/Views/EmplyeeRegisterPage.xaml.cs" Line="14" Column="65" />
-      <File FileName="FaceMeApp/ViewModel/EmployeeRegistrationViewModel.cs" Line="53" Column="14" />
-      <File FileName="FaceMeApp/App.xaml.cs" Line="26" Column="44" />
-      <File FileName="Droid/MainActivity.cs" Line="1" Column="1" />
+      <File FileName="FaceMeApp/Views/SubmitAttendancePage.xaml.cs" Line="114" Column="64" />
+      <File FileName="Droid/DependencyServices/PersistStoreService.cs" Line="46" Column="1" />
+      <File FileName="FaceMeApp/DependencyServices/IPersistStoreService.cs" Line="66" Column="1" />
+      <File FileName="FaceMeApp/Views/EmplyeeRegisterPage.xaml.cs" Line="15" Column="65" />
+      <File FileName="FaceMeApp/ViewModel/EmployeeRegistrationViewModel.cs" Line="50" Column="108" />
+      <File FileName="FaceMeApp/ServiceLayer/DataService.cs" Line="130" Column="41" />
+      <File FileName="FaceMeApp/Model/EmployeeDetail.cs" Line="6" Column="18" />
+      <File FileName="FaceMeApp/Views/AttendanceSummaryPage.xaml.cs" Line="26" Column="9" />
+      <File FileName="FaceMeApp/Views/AttendanceSummaryPage.xaml" Line="78" Column="26" />
+      <File FileName="FaceMeApp/Views/SubmitAttendancePage.xaml" Line="43" Column="31" />
+      <File FileName="FaceMeApp/Views/LandingPage.xaml.cs" Line="123" Column="90" />
+      <File FileName="FaceMeApp/ViewModel/LoginViewModel.cs" Line="62" Column="102" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.ItemProperties.FaceMeApp.Droid PreferredExecutionTarget="Android.4d0014485ab68037" />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore>
-      <Breakpoint file="/Users/dmi/Documents/Vishal/FaceMeApp/FaceMeApp/ViewModel/EmployeeRegistrationViewModel.cs" relfile="FaceMeApp/ViewModel/EmployeeRegistrationViewModel.cs" line="25" column="1" />
-      <Breakpoint file="/Users/dmi/Documents/Vishal/FaceMeApp/FaceMeApp/ViewModel/EmployeeRegistrationViewModel.cs" relfile="FaceMeApp/ViewModel/EmployeeRegistrationViewModel.cs" line="33" column="1" />
+      <Breakpoint file="/Users/dmi/Documents/Hackathon/Master-minds/FaceMeApp/Droid/DependencyServices/PersistStoreService.cs" relfile="Droid/DependencyServices/PersistStoreService.cs" line="89" column="1" />
+      <Breakpoint file="/Users/dmi/Documents/Hackathon/Master-minds/FaceMeApp/FaceMeApp/Views/LandingPage.xaml.cs" relfile="FaceMeApp/Views/LandingPage.xaml.cs" line="94" column="1" />
+      <Breakpoint file="/Users/dmi/Documents/Hackathon/Master-minds/FaceMeApp/Droid/DependencyServices/PersistStoreService.cs" relfile="Droid/DependencyServices/PersistStoreService.cs" line="113" column="1" />
+      <Breakpoint file="/Users/dmi/Documents/Hackathon/Master-minds/FaceMeApp/FaceMeApp/ServiceLayer/DataService.cs" relfile="FaceMeApp/ServiceLayer/DataService.cs" line="69" column="1" />
+      <Breakpoint file="/Users/dmi/Documents/Hackathon/Master-minds/FaceMeApp/FaceMeApp/ServiceLayer/DataService.cs" relfile="FaceMeApp/ServiceLayer/DataService.cs" line="92" column="1" />
+      <Breakpoint file="/Users/dmi/Documents/Hackathon/Master-minds/FaceMeApp/FaceMeApp/ServiceLayer/DataService.cs" relfile="FaceMeApp/ServiceLayer/DataService.cs" line="101" column="1" />
+      <Breakpoint file="/Users/dmi/Documents/Hackathon/Master-minds/FaceMeApp/FaceMeApp/Views/LandingPage.xaml.cs" relfile="FaceMeApp/Views/LandingPage.xaml.cs" line="117" column="1" />
+      <Breakpoint file="/Users/dmi/Documents/Hackathon/Master-minds/FaceMeApp/FaceMeApp/Views/LandingPage.xaml.cs" relfile="FaceMeApp/Views/LandingPage.xaml.cs" line="116" column="1" />
+      <Breakpoint file="/Users/dmi/Documents/Hackathon/Master-minds/FaceMeApp/FaceMeApp/Views/SubmitAttendancePage.xaml.cs" relfile="FaceMeApp/Views/SubmitAttendancePage.xaml.cs" line="92" column="1" />
     </BreakpointStore>
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />

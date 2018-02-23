@@ -8,7 +8,7 @@ namespace FaceMeApp
         {
             InitializeComponent();
 
-            MainPage = new NavigationPage(new Views.EmplyeeRegisterPage());
+            MainPage = new NavigationPage(new Views.LoginPage());
         }
 
         protected override void OnStart()

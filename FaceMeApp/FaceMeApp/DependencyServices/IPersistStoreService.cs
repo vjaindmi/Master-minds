@@ -38,6 +38,31 @@ namespace FaceMeApp.DependencyServices
         /// <returns>The wpa.</returns>
         /// <param name="ssid">Ssid.</param>
         /// <param name="password">Password.</param>
-        Task<bool> ConnectWpa(string ssid, string password);
+        ///         
+        //Task<string> ConnectWpa(string ssid, string password);
+
+        string ConnectWpa(string ssid, string password);
+        /// <summary>
+        /// Gets the bytes.
+        /// </summary>
+        /// <returns>The bytes.</returns>
+        byte[] GetBytes();
+        /// <summary>
+        /// Resizes the image android.
+        /// </summary>
+        /// <returns>The image android.</returns>
+        /// <param name="imageData">Image data.</param>
+        /// <param name="width">Width.</param>
+        /// <param name="height">Height.</param>
+        byte[] ResizeImageAndroid(byte[] imageData, float width, float height);
+        /// <summary>
+        /// Gets the image path.
+        /// </summary>
+        /// <returns>The image path.</returns>
+        string getImagePath();
+        void saveEmployeeId(string id);
+
+        string getEmployeeId();
+
     }
 }

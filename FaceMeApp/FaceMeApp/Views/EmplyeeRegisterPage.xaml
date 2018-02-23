@@ -3,11 +3,14 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
     x:Class="FaceMeApp.Views.EmplyeeRegisterPage"
      xmlns:Controls="clr-namespace:FaceMeApp.CustomRenderer"
-     BackgroundColor="#2F2130">
+    BackgroundImage="background"
+    >
 	  <Grid Margin="16,25,16,25"
        >
                
-                <Image Grid.Row="0" Source="logo.jpg" HeightRequest="100"/>
+                <Image Grid.Row="0" Source="logo"
+        HeightRequest="100"
+        WidthRequest="100"/>
                 <Frame BackgroundColor="Transparent" Grid.Row="1" HasShadow="false" Margin="0,35,0,0">
                     <StackLayout Spacing="25">
                     <StackLayout Spacing="0">
@@ -18,7 +21,8 @@
                                 Placeholder="Enter Employee Id" 
                         FontSize="Medium" TextColor="Aqua"
                             PlaceholderColor="White"
-                    Margin="0,30,0,0"/>
+                    Margin="0,30,0,0"
+                    HeightRequest="50"/>
                            
                             <BoxView HeightRequest="1" BackgroundColor="White" />
                         </StackLayout>

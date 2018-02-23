@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using FaceMeApp.DependencyServices;
+using FaceMeApp.Model;
 using FaceMeApp.ServiceLayer;
 using Plugin.Media;
 using Plugin.Media.Abstractions;
@@ -10,18 +11,35 @@ namespace FaceMeApp.Views
 {
     public partial class SubmitAttendancePage : ContentPage
     {
+        static bool status =false;
         MediaFile imageFile = null;
-        public SubmitAttendancePage()
+        string _macAddress = string.Empty;
+        EmployeeDetail _employeeDetail = null;
+        public SubmitAttendancePage(EmployeeDetail employeeDetail)
         {
+            _employeeDetail = employeeDetail;
+            _macAddress = employeeDetail.MACAddress;
             InitializeComponent();
             btnSubmit.IsEnabled = false;
+            status = false;
         }
 
         void Camera_Clicked(object sender, System.EventArgs e)
         {
             Device.BeginInvokeOnMainThread(() => OpenCamera());
         }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
 
+            if (!status)
+                btnSubmit.Text = "Check In";
+            else
+                btnSubmit.Text = "Check Out";
+
+            lblEmpName.Text = _employeeDetail.FirstName + " " + _employeeDetail.LastName;
+            lblDesignation.Text = _employeeDetail.Technology;
+        }
         private async void OpenCamera()
         {
             imageFile = null;
@@ -69,16 +87,39 @@ namespace FaceMeApp.Views
 
             if (imageFile != null)
             {
-                //IDataService service = new DataService();
-                //var result = await service.VerifyFace(imageStream, imageFile.GetStream());
-                //if (result)
-                //{
-                //    await DisplayAlert("Alert!", "Verified face successfully!", "OK");
-                //}
-                //else
-                //{
-                //    await DisplayAlert("Alert!", "Invalid Image found, Please try again.", "OK");
-                //}
+                IDataService service = new DataService();
+                var result = await service.VerifyFace(imageStream, imageFile.GetStream());
+                if (result)
+                {
+                    var employeeId = DependencyService.Get<IPersistStoreService>().getEmployeeId();
+                    var type = (!status) ? 0 : 1;
+
+                    var dataService = new DataService();
+                    var employeeDetail = new EmployeeDetail();
+                    employeeDetail.EmployeeId = Convert.ToInt32(employeeId) ;
+                    employeeDetail.CheckInType = type;
+                    if (!status)
+                    {
+                        employeeDetail.InTime = DateTime.Now;
+                    }
+                    else
+                    {
+                        employeeDetail.OutTime = DateTime.Now;
+                    }
+
+                    var detail = await dataService.UpdateEmployeeDetail(employeeDetail);
+                    if (detail != null)
+                    {
+                        status = !status;
+                        imgUser.Source = "userPlaceholder.jpg";
+                        await Navigation.PushAsync(new AttendanceSummaryPage(employeeDetail));
+                    }
+                   // await DisplayAlert("Alert!", "Verified face successfully!", "OK");
+                }
+                else
+                {
+                    await DisplayAlert("Alert!", "Invalid Image found, Please try again.", "OK");
+                }
 
             }
         }

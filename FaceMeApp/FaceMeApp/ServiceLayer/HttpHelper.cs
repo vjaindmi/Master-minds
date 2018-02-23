@@ -7,7 +7,7 @@ namespace FaceMeApp.ServiceLayer
 {
     public class HttpHelper
     {
-        public static string APIBaseAddress = "";
+        public static string APIBaseAddress = "http://192.168.1.191/faceAuth/";
         public const string RequestFormat = "application/json";
         public const string EncodingFormat = "utf-8";
 
@@ -17,7 +17,7 @@ namespace FaceMeApp.ServiceLayer
             handler.ClientCertificateOptions = ClientCertificateOption.Manual;
 
             var client = new HttpClient(handler);
-            client.BaseAddress = new Uri(APIBaseAddress);
+           // client.BaseAddress = new Uri(APIBaseAddress);
             client.DefaultRequestHeaders.Accept.Clear();
             client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue(RequestFormat));
             client.DefaultRequestHeaders.AcceptEncoding.Add(new StringWithQualityHeaderValue(EncodingFormat));
