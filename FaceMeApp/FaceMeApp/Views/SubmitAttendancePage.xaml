@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="FaceMeApp.Views.SubmitAttendancePage">
+     <StackLayout VerticalOptions="CenterAndExpand">
+        <Image x:Name="imgUser" HorizontalOptions="CenterAndExpand"
+        HeightRequest="200"
+        WidthRequest="200"
+        Source="userPlaceholder.jpg">
+         <Image.GestureRecognizers>
+        <TapGestureRecognizer
+                Tapped="Camera_Clicked"
+                NumberOfTapsRequired="1" />
+  </Image.GestureRecognizers>
+        </Image>
+    <Button Image="photo-camera" HorizontalOptions="Center"
+       
+        IsVisible="false"/>
+        <Button Text="Verify Face" BackgroundColor="Silver"
+        HorizontalOptions="Center"
+        WidthRequest="100"
+        Clicked="Submit_Clicked"
+        x:Name="btnSubmit"/>
+    </StackLayout>
+</ContentPage>

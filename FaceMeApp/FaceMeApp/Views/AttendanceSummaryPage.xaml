@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+    x:Class="FaceMeApp.Views.AttendanceSummaryPage"
+    xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+    BackgroundColor="#16AA88">
+	 <ScrollView>
+   
+    <Grid RowSpacing="0">
+        <Grid.RowDefinitions>
+        <RowDefinition Height="*"/>
+             <RowDefinition Height="Auto"/>
+             <RowDefinition Height="Auto"/>
+             <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+            <StackLayout Grid.Row="0">       
+         <controls:CircleImage 
+                    Source="userPlaceholder.jpg" 
+                    Aspect="AspectFill"
+                    HeightRequest="150"
+                    WidthRequest="150"
+                    x:Name="imgUser"
+                    HorizontalOptions="Center"           
+             BorderColor="#38B99C"
+                BorderThickness="10"
+                    Margin="0,20,0,0"/>
+             <Label Text="Employee Name"
+        FontSize="Large"
+        HorizontalTextAlignment="Center"
+        TextColor="White"
+        FontAttributes="Bold"/>
+        <Label Text="Designation"
+        FontSize="Medium"
+        HorizontalTextAlignment="Center"
+        TextColor="White"
+        FontAttributes="Bold"
+            Margin="0,0,0,20"/>
+            </StackLayout>
+            
+        <StackLayout Grid.Row="1" BackgroundColor="#0F9D7D"  VerticalOptions="Fill"
+            Padding="10">
+              <Label Text="IN TIME"
+        FontSize="Small"
+        HorizontalTextAlignment="Center"
+        TextColor="White"
+        />
+        <Label Text="10:20 AM"
+        FontSize="Medium"
+        HorizontalTextAlignment="Center"
+        TextColor="White"
+        FontAttributes="Bold"
+            />
+        </StackLayout>
+         <StackLayout Padding="10" Grid.Row="2" BackgroundColor="#02886C" VerticalOptions="Fill">
+              <Label Text="OUT TIME"
+        FontSize="Small"
+        HorizontalTextAlignment="Center"
+        TextColor="White"
+        />
+        <Label Text="10:20 AM"
+        FontSize="Medium"
+        HorizontalTextAlignment="Center"
+        TextColor="White"
+        FontAttributes="Bold"
+            />
+        </StackLayout>
+        <StackLayout Padding="10" Grid.Row="3" BackgroundColor="#066C56" VerticalOptions="Fill">
+              <Label Text="TOTAL TIME"
+        FontSize="Small"
+        HorizontalTextAlignment="Center"
+        TextColor="White"
+        />
+        <Label Text="07.20 HOURS"
+        FontSize="Medium"
+        HorizontalTextAlignment="Center"
+        TextColor="White"
+        FontAttributes="Bold"
+            />
+        </StackLayout>
+            </Grid>
+         </ScrollView>
+</ContentPage>
